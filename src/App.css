@@ -1,41 +1,85 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+#root,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./assets/city.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
-  padding: 2em;
+  background: whitesmoke;
+  width: 50%;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 25px;
+  padding: 1rem;
+  box-shadow: 10px 10px;
+  opacity: 0.94;
 }
 
-.read-the-docs {
-  color: #888;
+.heading {
+  display: flex;
+  align-items: center;
+  height: 582px;
+}
+
+button {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.8em 1.6em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #3498db;
+  border-radius: 0.6em;
+  cursor: pointer;
+  border-color: #3498db;
+  color: #fff;
+  margin: 1.6rem;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #000;
+  animation: rotate 0.7s ease-in-out both;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 80%;
+  }
 }
