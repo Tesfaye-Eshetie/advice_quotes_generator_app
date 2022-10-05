@@ -1,27 +1,21 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useAppSelector, useAppDispatch } from "./hooks";
+import { fetchAdvice } from "./features/advice/adviceSlice";
 import "./App.css";
 
 function App() {
-  const [advice, setAdvice] = useState("");
+  const { advice } = useAppSelector((state) => state.advice);
+  const dispatch = useAppDispatch();
 
-  const fetchAdvice = async () => {
-    try {
-      const { data } = await axios("https://api.adviceslip.com/advice");
-      setAdvice(data.slip.advice);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    fetchAdvice();
+    dispatch(fetchAdvice());
   }, []);
 
   return (
     <div className="app">
       <div className="card">
         <h2 className="heading">{advice}</h2>
-        <button className="button" onClick={fetchAdvice}>
+        <button className="button" onClick={() => dispatch(fetchAdvice())}>
           GIVE ME ADVICE!
         </button>
       </div>

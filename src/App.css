@@ -34,9 +34,8 @@ body {
 }
 
 .heading {
-  display: flex;
-  align-items: center;
-  height: 582px;
+  line-height: 2rem;
+  padding: 1rem;
 }
 
 button {
@@ -50,7 +49,6 @@ button {
   cursor: pointer;
   border-color: #3498db;
   color: #fff;
-  margin: 1.6rem;
   align-self: center;
 }
 
